@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# CSS: Paksa tema terang
+# CSS: Paksa tema terang + teks kontras
 st.markdown("""
     <style>
     .stApp {
@@ -13,8 +13,11 @@ st.markdown("""
         background-color: #f8f9fa;
         color: #000000;
     }
+    .css-1d391kg {  /* Untuk teks pada card seperti st.success/info */
+        color: #000 !important;
+    }
     </style>
-    """, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
 # --- KONFIGURASI HALAMAN ---
 st.set_page_config(
@@ -34,8 +37,10 @@ def load_data(file_path):
 df = load_data('data/SuperMarket Analysis.csv')
 
 # --- HEADER ---
-st.markdown("<h1 style='text-align: center; color: #F4A261;'>📊 Dashboard Analisis Penjualan Supermarket</h1>", unsafe_allow_html=True)
-st.markdown("<hr style='border: 1px solid #F4A261;'>", unsafe_allow_html=True)
+st.markdown("""
+    <h1 style='text-align: center; color: #264653;'>📊 Dashboard Analisis Penjualan Supermarket</h1>
+    <hr style='border: 1px solid #264653;'>
+""", unsafe_allow_html=True)
 
 # --- SIDEBAR UNTUK FILTER ---
 st.sidebar.header("🎚 Filter Data:")
@@ -117,5 +122,10 @@ with st.expander("📄 Lihat Data Mentah (Sesuai Filter)"):
     st.dataframe(df_selection, use_container_width=True)
 
 # --- FOOTER ---
-st.markdown("<hr>", unsafe_allow_html=True)
-st.markdown("<div style='text-align: center'><small>🚀 Dibuat oleh <strong>Dhaifan Arijuddin (DS32B)</strong> dengan 😵❤ Streamlit | 2025</small></div>", unsafe_allow_html=True)
+st.markdown("<hr style='border-top: 1px solid #ccc;'>", unsafe_allow_html=True)
+st.markdown(
+    "<div style='text-align: center; color: #555;'>"
+    "<small>🚀 Dibuat oleh <strong>Dhaifan Arijuddin (DS32B)</strong> dengan 😵❤ Streamlit | 2025</small>"
+    "</div>",
+    unsafe_allow_html=True
+)
