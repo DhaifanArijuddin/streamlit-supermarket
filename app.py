@@ -63,11 +63,23 @@ average_rating = round(df_selection["Rating"].mean(), 1)
 star_rating = "⭐" * int(round(average_rating, 0))
 
 col1, col2 = st.columns(2)
-with col1:
-    st.metric("💰 Total Penjualan", f"US $ {total_sales:,}")
-with col2:
-    st.metric("⭐ Rata-rata Rating", f"{average_rating} {star_rating}")
 
+with col1:
+    st.markdown(f"""
+        <div style='background-color:#dff5ec; padding:20px; border-radius:10px; text-align:center;'>
+            <h3 style='color:#264653;'>💰 Total Penjualan</h3>
+            <h1 style='color:#2A9D8F;'>US ${total_sales:,}</h1>
+        </div>
+    """, unsafe_allow_html=True)
+
+with col2:
+    st.markdown(f"""
+        <div style='background-color:#fff0e6; padding:20px; border-radius:10px; text-align:center;'>
+            <h3 style='color:#264653;'>⭐ Rata-rata Rating</h3>
+            <h1 style='color:#F4A261;'>{average_rating} {star_rating}</h1>
+        </div>
+    """, unsafe_allow_html=True)
+    
 # --- INSIGHT SINGKAT ---
 st.subheader("📌 Insight Singkat")
 col1, col2, col3 = st.columns(3)
