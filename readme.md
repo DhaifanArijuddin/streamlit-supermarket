@@ -1,6 +1,6 @@
 # 🛒 Dashboard Analisis Penjualan Supermarket
 
-👉 [Lihat Dashboard di Streamlit](https://your-username-streamlit-project.streamlit.app)
+👉 [Lihat Dashboard di Streamlit](https://app-supermarket-henwszmacedzxnzcdedbe8.streamlit.app/)
 
 Aplikasi ini merupakan dashboard interaktif berbasis **Streamlit** yang menampilkan analisis penjualan dari data supermarket. Dashboard menyediakan filter dinamis dan visualisasi interaktif yang membantu dalam mengidentifikasi tren serta insight bisnis dari berbagai kota, tipe pelanggan, dan lini produk.
 
