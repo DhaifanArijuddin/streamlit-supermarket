@@ -3,6 +3,20 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+# CSS untuk memaksa light theme agar semua elemen terbaca jelas
+st.markdown("""
+    <style>
+    .stApp {
+        background-color: #ffffff;
+        color: #000000;
+    }
+    div[data-testid="stSidebar"] {
+        background-color: #f8f9fa;
+        color: #000000;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 # --- KONFIGURASI HALAMAN ---
 st.set_page_config(
     page_title="Dashboard Penjualan Supermarket",
